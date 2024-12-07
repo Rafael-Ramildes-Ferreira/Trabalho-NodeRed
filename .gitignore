@@ -1,0 +1,5 @@
+**/.config*
+**/*.backup
+node-red/.npm/*
+node-red/package.json
+node-red/settings.js
