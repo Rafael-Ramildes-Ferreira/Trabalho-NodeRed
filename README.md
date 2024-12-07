@@ -10,4 +10,4 @@ To build the image from the Dockerfile:
 
 To run the image:
 
-```docker run -it -p 1880:1880 --rm -v ./node-red:/data --name node-red-container iot-node-red```
+```docker run -it -p 1880:1880 -p 1883:1883 --rm -v ./node-red:/data --name node-red-container iot-node-red```
