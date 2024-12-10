@@ -39,6 +39,121 @@
         "sessionExpiry": ""
     },
     {
+        "id": "bb53d141012f9b95",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "9ec4dee905f4e815",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "4d4177295e338847",
+        "type": "ui_group",
+        "name": "Mapa",
+        "tab": "bb53d141012f9b95",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
         "id": "4d91841b0a6b4daf",
         "type": "aedes broker",
         "z": "5ff7446b81f56402",
@@ -96,7 +211,8 @@
         "y": 140,
         "wires": [
             [
-                "a6f45fae970a484c"
+                "a6f45fae970a484c",
+                "f91e1c2fff90add3"
             ]
         ]
     },
@@ -144,6 +260,278 @@
         "statusType": "auto",
         "x": 460,
         "y": 140,
+        "wires": []
+    },
+    {
+        "id": "88d98e35149eebfd",
+        "type": "worldmap",
+        "z": "5ff7446b81f56402",
+        "name": "",
+        "lat": "-27.59757",
+        "lon": "-48.54981667",
+        "zoom": "18",
+        "layer": "OSMC",
+        "cluster": "",
+        "maxage": "",
+        "usermenu": "show",
+        "layers": "show",
+        "panit": "false",
+        "panlock": "false",
+        "zoomlock": "false",
+        "hiderightclick": "true",
+        "coords": "none",
+        "showgrid": "false",
+        "showruler": "false",
+        "allowFileDrop": "false",
+        "path": "/worldmap",
+        "overlist": "DR,CO,RA,DN,BU,SN",
+        "maplist": "OSMC,EsriS",
+        "mapname": "",
+        "mapurl": "",
+        "mapopt": "",
+        "mapwms": false,
+        "x": 900,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "f91e1c2fff90add3",
+        "type": "file",
+        "z": "5ff7446b81f56402",
+        "name": "",
+        "filename": "/dev/stdout",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 470,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2291602a151999da",
+        "type": "inject",
+        "z": "5ff7446b81f56402",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "input",
+        "payload": "{\"vec\":[0.00005,0.00005]}",
+        "payloadType": "json",
+        "x": 390,
+        "y": 420,
+        "wires": [
+            [
+                "c612e55198e7f898"
+            ]
+        ]
+    },
+    {
+        "id": "1135cc4990fad7d0",
+        "type": "file in",
+        "z": "5ff7446b81f56402",
+        "name": "",
+        "filename": "/data/init_location.json",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 340,
+        "y": 480,
+        "wires": [
+            [
+                "3bf5721efacf83f4"
+            ]
+        ]
+    },
+    {
+        "id": "3bf5721efacf83f4",
+        "type": "json",
+        "z": "5ff7446b81f56402",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 530,
+        "y": 480,
+        "wires": [
+            [
+                "c612e55198e7f898",
+                "496aadb9bd0eed17"
+            ]
+        ]
+    },
+    {
+        "id": "c612e55198e7f898",
+        "type": "function",
+        "z": "5ff7446b81f56402",
+        "name": "function 1",
+        "func": "if (msg.topic == \"location\"){\n    flow.set(\"lon\", msg.payload.lon);\n    flow.set(\"lat\", msg.payload.lat);\n} else if (msg.topic == \"input\") {\n    flow.set(\"lon\", flow.get(\"lon\") + msg.payload.lon);\n    flow.set(\"lat\", flow.get(\"lat\") + msg.payload.lat);\n}\n\nmsg.payload = {\n    \"name\": \"loc\",\n    \"lon\": flow.get(\"lon\"),\n    \"lat\": flow.get(\"lat\")\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 720,
+        "y": 480,
+        "wires": [
+            [
+                "88d98e35149eebfd",
+                "2cf947c2aa378c56"
+            ]
+        ]
+    },
+    {
+        "id": "82aad2cf522d11f8",
+        "type": "file",
+        "z": "5ff7446b81f56402",
+        "name": "",
+        "filename": "location.json",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 1070,
+        "y": 500,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8341fe8468ae3c36",
+        "type": "inject",
+        "z": "5ff7446b81f56402",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "location",
+        "payload": "{ \"name\":\"loc\", \"lat\":-27.59757, \"lon\":-48.54981667}",
+        "payloadType": "json",
+        "x": 130,
+        "y": 480,
+        "wires": [
+            [
+                "1135cc4990fad7d0"
+            ]
+        ]
+    },
+    {
+        "id": "496aadb9bd0eed17",
+        "type": "debug",
+        "z": "5ff7446b81f56402",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 720,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "a3e15b7a4ba872bf",
+        "type": "mqtt in",
+        "z": "5ff7446b81f56402",
+        "name": "",
+        "topic": "input",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "89d066bb56b8ed35",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 570,
+        "y": 360,
+        "wires": [
+            [
+                "9b0b1dcc331ea038",
+                "c612e55198e7f898"
+            ]
+        ]
+    },
+    {
+        "id": "51c75cf77f4d3928",
+        "type": "debug",
+        "z": "5ff7446b81f56402",
+        "name": "debug 4",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 820,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "2cf947c2aa378c56",
+        "type": "debug",
+        "z": "5ff7446b81f56402",
+        "name": "debug 5",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 900,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "9b0b1dcc331ea038",
+        "type": "debug",
+        "z": "5ff7446b81f56402",
+        "name": "debug 6",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 740,
+        "y": 360,
         "wires": []
     }
 ]
